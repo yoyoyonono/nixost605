@@ -74,6 +74,7 @@
     extraGroups = [ "networkmanager" "wheel" "users" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
+    homeMode = "775";
   };
 
   users.users.candy = {
@@ -82,6 +83,7 @@
     extraGroups = [ "networkmanager" "wheel" "users" "jellyfin"];
     packages = with pkgs; [];
     shell = pkgs.fish;
+    homeMode = "775";
   };
 
   # Allow unfree packages
@@ -135,6 +137,12 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
+  };
+
+  services.kavita = {
+    enable = true;
+    dataDir = "/home/administrator/kavita/";
+    tokenKeyFile = "/home/administrator/kavita/tokenKey";
   };
 
   # Open ports in the firewall.
