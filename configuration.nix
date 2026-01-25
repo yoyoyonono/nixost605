@@ -121,6 +121,11 @@
   #   enableSSHSupport = true;
   # };
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    vips
+  ];
+
   programs.zsh.enable = true;
   programs.fish.enable = true;
 
@@ -131,14 +136,8 @@
 
   services.qemuGuest.enable = true;
 
-  services.kavita = {
-    enable = true;
-    dataDir = "/home/administrator/kavita/";
-    tokenKeyFile = "/home/administrator/kavita/tokenKey";
-  };
-
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 25580 ];
+  networking.firewall.allowedTCPPorts = [ 25580 8096 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
