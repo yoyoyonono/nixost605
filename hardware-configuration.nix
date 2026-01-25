@@ -21,6 +21,7 @@
   fileSystems."/home" =
     { device = "/dev/sdb1";
       fsType = "btrfs";
+      options = [ "compress=zstd" ];
     };
 
   swapDevices =
