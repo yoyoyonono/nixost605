@@ -73,6 +73,7 @@
     description = "Administrator";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   users.users.candy = {
@@ -80,6 +81,7 @@
     description = "Candy";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.fish;
   };
 
   # Allow unfree packages
@@ -94,6 +96,19 @@
     btrfs-progs
   #  wget
   ];
+  
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -102,6 +117,9 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # List services that you want to enable:
 
