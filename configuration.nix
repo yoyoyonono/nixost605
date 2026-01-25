@@ -95,9 +95,10 @@
     gh
     btrfs-progs
   #  wget
-    pkgs.jellyfin
-    pkgs.jellyfin-web
-    pkgs.jellyfin-ffmpeg
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
+    podman-compose
   ];
   
   virtualisation.containers.enable = true;
