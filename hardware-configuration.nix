@@ -19,7 +19,7 @@
     };
 
   fileSystems."/home" =
-    { device = "/dev/sdb1";
+    { device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1-part1";
       fsType = "btrfs";
       options = [ "compress=zstd" ];
     };
