@@ -18,6 +18,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home" =
+    { device = "/dev/sdb1";
+      fsType = "btrfs";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/0551d629-bf23-4b61-a88d-f6b904b2fcb5"; }
     ];
