@@ -2,7 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
@@ -12,7 +12,6 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./configuration.nix
-            inputs.home-manager.nixosModules.default
             nix-flatpak.nixosModules.nix-flatpak
           ];
         };
