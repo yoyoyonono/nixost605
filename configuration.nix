@@ -71,7 +71,7 @@
   users.users.administrator = {
     isNormalUser = true;
     description = "Administrator";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "users" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -79,7 +79,7 @@
   users.users.candy = {
     isNormalUser = true;
     description = "Candy";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "users" "jellyfin"];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
@@ -95,6 +95,9 @@
     gh
     btrfs-progs
   #  wget
+    pkgs.jellyfin
+    pkgs.jellyfin-web
+    pkgs.jellyfin-ffmpeg
   ];
   
   virtualisation.containers.enable = true;
@@ -127,6 +130,11 @@
   services.openssh.enable = true;
 
   services.qemuGuest.enable = true;
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
