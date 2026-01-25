@@ -15,6 +15,12 @@
   boot.loader.grub.device = "/dev/sdb";
   boot.loader.grub.useOSProber = true;
 
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
+  };
+
   networking.hostName = "t605"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -67,7 +73,7 @@
     packages = with pkgs; [];
   };
 
-  users.user.candy = {
+  users.users.candy = {
     isNormalUser = true;
     description = "Candy";
     extraGroups = [ "networkmanager" "wheel" ];
