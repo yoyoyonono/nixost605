@@ -80,7 +80,7 @@
   users.users.candy = {
     isNormalUser = true;
     description = "Candy";
-    extraGroups = [ "networkmanager" "wheel" "users" "jellyfin"];
+    extraGroups = [ "networkmanager" "wheel" "users" ];
     packages = with pkgs; [];
     shell = pkgs.fish;
     homeMode = "775";
@@ -97,9 +97,6 @@
     gh
     btrfs-progs
   #  wget
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
     podman-compose
   ];
   
@@ -133,11 +130,6 @@
   services.openssh.enable = true;
 
   services.qemuGuest.enable = true;
-
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-  };
 
   services.kavita = {
     enable = true;
