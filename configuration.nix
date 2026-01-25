@@ -137,7 +137,7 @@
   services.qemuGuest.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 25580 8096 ];
+  networking.firewall.allowedTCPPorts = [ 25580 8096 5000 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
