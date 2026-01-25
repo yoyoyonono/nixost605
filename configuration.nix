@@ -15,7 +15,7 @@
   boot.loader.grub.device = "/dev/sdb";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "t605"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -24,6 +24,16 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  networking.interfaces.ens18.ipv4.addresses = [
+    {
+      address = "192.168.50.67";
+      prefixLength = 24;
+    }
+  ]; 
+  
+  networking.defaultGateway = "192.168.50.1";
+  networking.nameservers = [ "192.168.50.1" ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -80,7 +90,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
