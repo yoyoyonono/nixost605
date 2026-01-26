@@ -160,12 +160,21 @@
   };
   systemd.services.nginx.serviceConfig.ProtectHome = false;
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    guiAddress = "192.168.50.67:8384";
+    guiPasswordFile = "/home/administrator/nixost605/secret/syncthing";
+    settings.gui.user = "yoyoyonono";
+  }; 
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 
     25580 
     8096 
     5000 
     80 
+    8384
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
