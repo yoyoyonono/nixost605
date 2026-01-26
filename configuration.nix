@@ -168,6 +168,19 @@
     settings.gui.user = "yoyoyonono";
   }; 
 
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      global.security = "user";
+      share = {
+        path = "/home/administrator";
+        "read only" = "yes";
+        "guest ok" = "no";
+      };
+    };
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 
     25580 
