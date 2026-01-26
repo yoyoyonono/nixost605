@@ -136,6 +136,21 @@
 
   services.qemuGuest.enable = true;
 
+  services.transmission = {
+    enable = true;
+    package = pkgs.transmission_4;
+    openPeerPorts = true;
+    openRPCPort = true;
+    settings = {
+      download-dir = "/home/administrator/Downloads";
+      rpc-authentication-required = true;
+      rpc-bind-address = "0.0.0.0";
+      rpc-username = "yoyoyonono";
+      rpc-password = "{d67675aade8cebd6f173473fcbb0609c86f1e3acsGlwCd4h";
+      rpc-whitelist-enabled = false;
+    };
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 25580 8096 5000 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
