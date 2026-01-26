@@ -151,8 +151,22 @@
     };
   };
 
+  services.nginx = {
+    enable = true;
+    user = "administrator";
+    virtualHosts."ggrks.moe" = {
+      root = "/home/administrator/webyeah";
+    };
+  };
+  systemd.services.nginx.serviceConfig.ProtectHome = false;
+
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 25580 8096 5000 ];
+  networking.firewall.allowedTCPPorts = [ 
+    25580 
+    8096 
+    5000 
+    80 
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
