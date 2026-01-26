@@ -181,6 +181,70 @@
     };
   };
 
+  services.dashy = {
+    enable = true;
+    virtualHost = {
+      domain = "dashy.ggrks.moe";
+      enableNginx = true;
+    };
+    settings = {
+      appConfig = {
+        statusCheck = false;
+      };
+      pageInfo = {
+        title = "Dashy";
+      };
+      sections = [
+        {
+          name = "usa";
+          items = [
+            {
+              title = "jellyfin";
+              icon = "https://github.com/jellyfin.png";
+              url = "https://jelly.ggrks.moe/";
+            }
+            {
+              title = "kavita";
+              icon = "https://github.com/Kareadita.png";
+              url = "https://kavita.ggrks.moe";
+            }
+            {
+              title = "gitea";
+              icon = "https://github.com/go-gitea.png";
+              url = "https://git.ggrks.moe";
+            }
+            {
+              title = "transmission";
+              icon = "https://github.com/transmission.png";
+              url = "https://transmission.ggrks.moe/";
+            }
+            {
+              title = "syncthing";
+              icon = "https://github.com/syncthing.png";
+              url = "https://syncthing.ggrks.moe/";
+            }
+          ];
+        }
+        {
+          name = "nepal";
+          items = [
+            {
+              title = "home assistant";
+              icon = "https://github.com/home-assistant.png";
+              url = "https://home.thapa.net:8123/";
+            }
+            {
+              title = "frigate";
+              icon = "https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/web/images/branding/apple-touch-icon.png";
+              url = "http://home.thapa.net:8971/";
+              statusCheckAllowInsecure = true; 
+            }
+          ]; 
+        }
+      ];
+    };
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 
     25580 
