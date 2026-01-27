@@ -223,6 +223,11 @@
               icon = "https://github.com/syncthing.png";
               url = "https://syncthing.ggrks.moe/";
             }
+            {
+              title = "proxmox";
+              icon = "https://github.com/proxmox.png";
+              url = "https://pve.ggrks.moe/";
+            }
           ];
         }
         {
