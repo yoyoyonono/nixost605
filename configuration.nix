@@ -85,6 +85,14 @@
     shell = pkgs.fish;
     homeMode = "775";
   };
+  
+  users.users.stonkola = {
+    isNormalUser = true;
+    description = "Stonks";
+    extraGroups = [ "networkmanager" "wheel" "users" "docker" ];
+    packages = with pkgs; [];
+    homeMode = "775";
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
