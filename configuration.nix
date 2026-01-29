@@ -71,7 +71,7 @@
   users.users.administrator = {
     isNormalUser = true;
     description = "Administrator";
-    extraGroups = [ "networkmanager" "wheel" "users" ];
+    extraGroups = [ "networkmanager" "wheel" "users" "docker" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
     homeMode = "775";
@@ -80,7 +80,7 @@
   users.users.candy = {
     isNormalUser = true;
     description = "Candy";
-    extraGroups = [ "networkmanager" "wheel" "users" ];
+    extraGroups = [ "networkmanager" "wheel" "users" "docker" ];
     packages = with pkgs; [];
     shell = pkgs.fish;
     homeMode = "775";
@@ -102,14 +102,18 @@
   
   virtualisation.containers.enable = true;
   virtualisation = {
-    podman = {
+    # podman = {
+    #   enable = true;
+
+    #   # Create a `docker` alias for podman, to use it as a drop-in replacement
+    #   dockerCompat = true;
+
+    #   # Required for containers under podman-compose to be able to talk to each other.
+    #   defaultNetwork.settings.dns_enabled = true;
+    # };
+
+    docker = {
       enable = true;
-
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
     };
   };
 
