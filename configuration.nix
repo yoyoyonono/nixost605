@@ -254,7 +254,11 @@
               title = "frigate";
               icon = "https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/web/images/branding/apple-touch-icon.png";
               url = "http://home.thapa.net:8971/";
-              statusCheckAllowInsecure = true; 
+            }
+            {
+              title = "immich";
+              icon = "https://github.com/immich-app.png";
+              url = "http://home.thapa.net:2283/";
             }
           ]; 
         }
