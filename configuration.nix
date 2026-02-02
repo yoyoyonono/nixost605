@@ -74,7 +74,7 @@
     extraGroups = [ "networkmanager" "wheel" "users" "docker" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
-    homeMode = "775";
+    homeMode = "755";
   };
 
   users.users.candy = {
@@ -83,7 +83,7 @@
     extraGroups = [ "networkmanager" "wheel" "users" "docker" ];
     packages = with pkgs; [];
     shell = pkgs.fish;
-    homeMode = "775";
+    homeMode = "755";
   };
   
   users.users.stonkola = {
@@ -91,7 +91,7 @@
     description = "Stonks";
     extraGroups = [ "networkmanager" "wheel" "users" "docker" ];
     packages = with pkgs; [];
-    homeMode = "775";
+    homeMode = "755";
   };
 
   # Allow unfree packages
