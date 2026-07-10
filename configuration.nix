@@ -253,17 +253,17 @@
             {
               title = "frigate";
               icon = "https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/web/images/branding/apple-touch-icon.png";
-              url = "http://frigate.home.thapa.net/";
+              url = "https://frigate.home.thapa.net/";
             }
             {
               title = "immich";
               icon = "https://github.com/immich-app.png";
-              url = "http://immich.home.thapa.net/";
+              url = "https://immich.home.thapa.net/";
             }
             {
               title = "proxmox";
               icon = "https://github.com/proxmox.png";
-              url = "http://pve.home.thapa.net/";
+              url = "https://pve.home.thapa.net/";
             }
           ]; 
         }
