@@ -14,7 +14,7 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0";
   boot.loader.grub.useOSProber = true;
 
   nix.settings = {
@@ -100,12 +100,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
-    gh
     btrfs-progs
-  #  wget
+    caesura
+    gh
+    git
     podman-compose
+    vim 
   ];
   
   virtualisation.containers.enable = true;
