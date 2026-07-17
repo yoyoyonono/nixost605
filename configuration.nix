@@ -245,9 +245,14 @@
               url = "https://git.ggrks.moe";
             }
             {
-              title = "transmission";
-              icon = "https://github.com/transmission.png";
-              url = "https://transmission.ggrks.moe/";
+              title = "qbittorrent";
+              icon = "https://github.com/qbittorrent.png";
+              url = "https://qbittorrent.ggrks.moe/";
+            }
+            {
+              title = "qui";
+              icon = "https://github.com/autobrr.png";
+              url = "https://qui.ggrks.moe/";
             }
             {
               title = "syncthing";
