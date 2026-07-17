@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -149,7 +149,7 @@
   services.qemuGuest.enable = true;
 
   services.transmission = {
-    enable = true;
+    enable = false;
     package = pkgs.transmission_4;
     openPeerPorts = true;
     openRPCPort = true;
@@ -164,6 +164,23 @@
       watch-dir = "/home/administrator/Downloads/watch";
     };
   };
+
+  services.qbittorrent = {
+    enable = true;
+    webuiPort = 22459;
+    openFirewall= true;
+    extraArgs = ["--confirm-legal-notice"];
+  };
+
+  services.qui = {
+    enable = true;
+    openFirewall = true;
+    secretFile = "/var/lib/qui/session-secret";
+    settings = {
+      host = "0.0.0.0";
+    };
+  };
+  systemd.services.qbittorrent.serviceConfig.ProtectHome = lib.mkForce false;
 
   services.nginx = {
     enable = true;
