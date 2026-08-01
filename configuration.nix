@@ -141,6 +141,8 @@
   programs.zsh.enable = true;
   programs.fish.enable = true;
 
+  programs.mosh.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
