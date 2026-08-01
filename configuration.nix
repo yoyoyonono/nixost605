@@ -298,6 +298,12 @@
     };
   };
 
+  services.iperf3 = {
+    enable = true;
+    port = 57554;
+    openFirewall = true;
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 
     25580 
