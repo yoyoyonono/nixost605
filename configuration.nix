@@ -105,6 +105,7 @@
     gh
     git
     podman-compose
+    trash-cli
     vim 
   ];
   
