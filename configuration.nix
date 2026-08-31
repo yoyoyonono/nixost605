@@ -67,6 +67,13 @@
     variant = "";
   };
 
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [
+      "b15644912ece0d14"
+    ];
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.administrator = {
     isNormalUser = true;
